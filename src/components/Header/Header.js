@@ -1,8 +1,8 @@
-import React, { Component, Fragment } from 'react'
-import { compose } from 'redux'
-import { connect } from 'react-redux'
-import { logout } from '../../actions'
-import { withRouter, Link } from 'react-router-dom'
+import React, { Component, Fragment } from "react";
+import { compose } from "redux";
+import { connect } from "react-redux";
+import { logout } from "../../actions";
+import { withRouter, Link } from "react-router-dom";
 
 import {
   Collapse,
@@ -15,127 +15,145 @@ import {
   NavItem,
   NavLink,
   UncontrolledButtonDropdown,
-  UncontrolledDropdown
-} from 'reactstrap'
+  UncontrolledDropdown,
+} from "reactstrap";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import SearchInput from './SearchInput'
-import Options from './Options'
+import SearchInput from "./SearchInput";
+import Options from "./Options";
 
-import './Header.css'
+import "./Header.css";
 
 class Header extends Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
-      collapsed: false
-    }
+      collapsed: false,
+    };
   }
 
-  render () {
-    const { collapsed } = this.state
-    const { dispatch, location, Auth } = this.props
+  render() {
+    const { collapsed } = this.state;
+    const { dispatch, location, Auth } = this.props;
     return (
-      <nav className='mb-4 navbar navbar-expand-md fixed-top navbar-dark bg-dark'>
-        <div className='container'>
-          <NavbarBrand tag={Link} to='/'>
-            <div className='logo d-md-none d-lg-inline-block' style={{ width: '2rem', height: '2rem' }} />
-            {' '}
-            nani?!
+      <nav className="mb-4 navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+        <div className="container">
+          <NavbarBrand tag={Link} to="/">
+            <div
+              className="logo d-md-none d-lg-inline-block"
+              style={{ width: "2rem", height: "2rem" }}
+            />{" "}
+            cinnamon
           </NavbarBrand>
-          <NavbarToggler onClick={() => this.setState({ collapsed: !collapsed })} />
+          <NavbarToggler
+            onClick={() => this.setState({ collapsed: !collapsed })}
+          />
           <Collapse isOpen={collapsed} navbar>
-            <Nav className='mr-auto' navbar>
+            <Nav className="mr-auto" navbar>
               <NavItem>
-                <NavLink disabled={Auth.guest} tag={Link} to={'/queue'}>
-                  <FontAwesomeIcon icon='list' className='d-md-none d-lg-inline-block' />
-                  {' '}
+                <NavLink disabled={Auth.guest} tag={Link} to={"/queue"}>
+                  <FontAwesomeIcon
+                    icon="list"
+                    className="d-md-none d-lg-inline-block"
+                  />{" "}
                   Queue
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink disabled={Auth.guest} tag={Link} to={'/history'}>
-                  <FontAwesomeIcon icon='history' className='d-md-none d-lg-inline-block' />
-                  {' '}
+                <NavLink disabled={Auth.guest} tag={Link} to={"/history"}>
+                  <FontAwesomeIcon
+                    icon="history"
+                    className="d-md-none d-lg-inline-block"
+                  />{" "}
                   History
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} to='/recent'>
-                  <FontAwesomeIcon icon='clock' className='d-md-none d-lg-inline-block' />
-                  {' '}
+                <NavLink tag={Link} to="/recent">
+                  <FontAwesomeIcon
+                    icon="clock"
+                    className="d-md-none d-lg-inline-block"
+                  />{" "}
                   Recent
                 </NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  <FontAwesomeIcon icon='step-forward' className='d-md-none d-lg-inline-block' />
-                  {' '}
+                  <FontAwesomeIcon
+                    icon="step-forward"
+                    className="d-md-none d-lg-inline-block"
+                  />{" "}
                   Series List
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem tag={Link} to='/list/simulcast'>
-                    <FontAwesomeIcon icon='closed-captioning' />
-                    {' '}
-                    Simulcasts
+                  <DropdownItem tag={Link} to="/list/simulcast">
+                    <FontAwesomeIcon icon="closed-captioning" /> Simulcasts
                   </DropdownItem>
-                  <DropdownItem tag={Link} to='/list/popular'>
-                    <FontAwesomeIcon icon='certificate' />
-                    {' '}
-                    Popular Anime
+                  <DropdownItem tag={Link} to="/list/popular">
+                    <FontAwesomeIcon icon="certificate" /> Popular Anime
                   </DropdownItem>
-                  <DropdownItem tag={Link} to='/list/newest'>
-                    <FontAwesomeIcon icon='calendar-alt' />
-                    {' '}
-                    Newest Anime
+                  <DropdownItem tag={Link} to="/list/newest">
+                    <FontAwesomeIcon icon="calendar-alt" /> Newest Anime
                   </DropdownItem>
-                  <DropdownItem tag={Link} to='/categories'>
-                    <FontAwesomeIcon icon='list' />
-                    {' '}
-                    Categories
+                  <DropdownItem tag={Link} to="/categories">
+                    <FontAwesomeIcon icon="list" /> Categories
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
               <NavItem>
-                <NavLink disabled={Auth.guest || !Auth.premium} tag={Link} to={'/manga'}>
-                  <FontAwesomeIcon icon='book' className='d-md-none d-lg-inline-block' />
-                  {' '}
+                <NavLink
+                  disabled={Auth.guest || !Auth.premium}
+                  tag={Link}
+                  to={"/manga"}
+                >
+                  <FontAwesomeIcon
+                    icon="book"
+                    className="d-md-none d-lg-inline-block"
+                  />{" "}
                   Manga
                 </NavLink>
               </NavItem>
             </Nav>
-            <Nav className='ml-auto' navbar>
-              <NavItem className='dropdown'>
+            <Nav className="ml-auto" navbar>
+              <NavItem className="dropdown">
                 <SearchInput />
               </NavItem>
-              <NavItem className='mt-2 mt-md-0'>
-                <UncontrolledButtonDropdown inNavbar className='w-100'>
-                  <DropdownToggle caret className='ml-md-2 mr-md-2 w-100'>
-                    <FontAwesomeIcon icon='user' />
+              <NavItem className="mt-2 mt-md-0">
+                <UncontrolledButtonDropdown inNavbar className="w-100">
+                  <DropdownToggle caret className="ml-md-2 mr-md-2 w-100">
+                    <FontAwesomeIcon icon="user" />
                   </DropdownToggle>
                   <DropdownMenu right>
-                    {Auth.guest
-                      ? <DropdownItem tag={Link} to={{pathname: '/login', state: { prevPath: location.pathname }}}>
+                    {Auth.guest ? (
+                      <DropdownItem
+                        tag={Link}
+                        to={{
+                          pathname: "/login",
+                          state: { prevPath: location.pathname },
+                        }}
+                      >
                         Login
                       </DropdownItem>
-                      : <Fragment>
+                    ) : (
+                      <Fragment>
                         <DropdownItem header>{Auth.username}</DropdownItem>
                         <DropdownItem onClick={() => dispatch(logout())}>
                           Logout
                         </DropdownItem>
-                      </Fragment>}
+                      </Fragment>
+                    )}
                   </DropdownMenu>
                 </UncontrolledButtonDropdown>
               </NavItem>
-              <NavItem className='mt-2 mt-md-0'>
+              <NavItem className="mt-2 mt-md-0">
                 <Options />
               </NavItem>
             </Nav>
           </Collapse>
         </div>
       </nav>
-    )
+    );
   }
 }
 
@@ -143,7 +161,7 @@ export default compose(
   withRouter,
   connect((store) => {
     return {
-      Auth: store.Auth
-    }
+      Auth: store.Auth,
+    };
   })
-)(Header)
+)(Header);
