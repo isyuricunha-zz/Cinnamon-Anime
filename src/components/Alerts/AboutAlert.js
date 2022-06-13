@@ -9,7 +9,7 @@ class AboutAlert extends Component {
     const { dispatch, visible } = this.props;
     return (
       <Alert color="info" isOpen={visible} toggle={() => dispatch(hideAbout())}>
-        <h5 className="alert-heading">What is nani?</h5>
+        <h5 className="alert-heading">What is Cinnamon</h5>
         <p className="mb-0">
           nani is an unofficial client for Crunchyroll. It provides an interface
           for Crunchyroll that is fast and easy to use, all while providing
