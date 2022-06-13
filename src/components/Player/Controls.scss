@@ -1,0 +1,146 @@
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+);
+@import '~bootstrap/scss/mixins/breakpoints';
+
+.controls {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+
+  transition: opacity ease-in-out 0.1s;
+
+  &.visible {
+    opacity: 1;
+    cursor: default;
+  }
+
+  & > .cover {
+    &.clickable {
+      cursor: pointer;
+    }
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.episode-information {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 26px;
+  flex: 1;
+  text-align: left;
+  padding: 15px;
+  user-select: none;
+  pointer-events: none;
+
+  > h3 {
+    @include media-breakpoint-between(xs, md) {
+      font-size: 0.7em;
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: 1em;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 1.25em;
+    }
+  }
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+}
+
+.toolbar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 10px 0 10px;
+
+  user-select: none;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  > .toolbar-button {
+    color: white;
+    padding: 10px;
+
+    transform-origin: center;
+
+    & :hover {
+      transform: scale(1.03);
+    }
+  }
+
+  > select {
+    //background-color: transparent;
+  }
+
+  & > .separator {
+    width: 100%;
+  }
+
+  > .video-resuming {
+    width: 100%;
+    background-color: rgba(0,0,0,.6);
+    font-style: italic;
+    color: #fff;
+    padding: 1rem;
+  }
+
+  > .time-ticker {
+    width: 60px;
+    text-align: center;
+  }
+
+  &:hover {
+    .progress {
+      height: 16px;
+    }
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.no-cursor {
+  cursor: none !important;
+
+  .cover {
+    cursor: inherit;
+  }
+}

@@ -1,0 +1,29 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+html {
+    overflow-x: hidden;
+}
+
+/* overrides modal adding padding */
+body {
+    padding-right: 0 !important;
+    padding-top: 5.2rem;
+    overflow-x: hidden;
+
+    /* ios padding */
+    @supports (padding-top: max(0px)) {
+        padding-top: calc(5.2rem + env(safe-area-inset-top));
+    }
+}
+
+a.text-success:hover {
+    color: #28a745 !important;
+}
+
+.logo {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-mask: url(./assets/ninja.svg) no-repeat center;
+    mask: url(./assets/ninja.svg) no-repeat center;
+    background-color: #007bff;
+}

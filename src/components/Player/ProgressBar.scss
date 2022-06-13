@@ -1,0 +1,34 @@
+.video-progress {
+  position: relative;
+  width: 100%;
+  padding: 0 6px;
+  z-index: 1;
+
+  & > .background {
+    width: 100%;
+    height: 8px;
+    background: rgba(0.25, 0.25, 0.25, 0.5);
+  }
+
+  .progress {
+    cursor: pointer;
+    height: 10px;
+    border-radius: 99999px;
+    background-color: rgba(62, 63, 64, 0.5) !important;
+    transition: height 100ms ease;
+  }
+
+  .progress-bar:last-child {
+    border-top-right-radius: 99999px;
+    border-bottom-right-radius: 99999px;
+  }
+
+  .video-timestamp {
+    position: absolute;
+    top: -35px;
+  }
+
+  .progress-percent {
+    pointer-events: none;
+  }
+}

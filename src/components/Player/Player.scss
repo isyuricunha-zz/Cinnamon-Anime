@@ -1,0 +1,82 @@
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+);
+@import '~bootstrap/scss/mixins/breakpoints';
+
+.player {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+
+    /* remove the orange outline on android */
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+    -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+    outline: none !important;
+
+    .video-player {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .bg-dark {
+        background-color: rgba(0,0,0,.4) !important;
+    }
+
+    .player-dark-blur {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,.6);
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+
+    .player-dark-overlay {
+        z-index: 1;
+
+        h2 {
+            font-size: 2.5vw;
+        }
+
+        @include media-breakpoint-down(md) {
+            h2 {
+                font-size: 4vw;
+            }
+        }
+    }
+
+    .player-icon {
+        @include media-breakpoint-down(sm) {
+            font-size: 2em;
+        }
+
+        @include media-breakpoint-between(sm, md) {
+            font-size: 3em;
+        }
+
+        @include media-breakpoint-up(md) {
+            font-size: 4em;
+        }
+    }
+
+    .player-center-overlay {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        //z-index: 1;
+    }
+}

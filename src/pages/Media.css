@@ -1,0 +1,106 @@
+.badge.badge-outline {
+    background-color: transparent;
+}
+
+.badge.badge-outline.badge-info {
+    border: 1px solid var(--info);
+    color: var(--info);
+}
+
+.badge.badge-outline.badge-secondary {
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+}
+
+.video-image-left, .video-image-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.video-image-left a, .video-image-right a {
+    display: flex;
+    min-height: 75%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.video-image-left img, .video-image-right img {
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .video-image-left a, .video-image-right a {
+        max-height: 90%;
+    }
+}
+
+.video-image-left {
+    left: -10vw;
+}
+
+.video-image-right {
+    right: -10vw;
+}
+
+.video-image-left, .video-image-overlay-left, .video-image-left img {
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.video-image-right, .video-image-overlay-right, .video-image-right img {
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.video-image-overlay-left, .video-image-overlay-right {
+    top: 0;
+    bottom: 0;
+    background-color: #111;
+    opacity: 0.6;
+    width: 100%;
+    min-height: 100%;
+    z-index: 1;
+    font-size: 3rem;
+    transition: all 0.2s linear;
+}
+
+.video-image-overlay-left:hover, .video-image-overlay-right:hover {
+    opacity: 0.3;
+}
+
+.player-width {
+    width: 100% !important;
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, .2);
+}
+
+.theatre {
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: fixed;
+}
+
+@media (max-width: 768px) {
+    .player-width {
+        width: 90% !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .player-width {
+        width: 80% !important;
+    }
+}
