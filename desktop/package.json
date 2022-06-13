@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "nani ui",
   "main": "index.js",
-  "repository": "https://github.com/destruc7i0n/nani-ui.git",
+  "repository": "https://github.com/isyuricunha/nani-ui.git",
   "homepage": "https://nani.ninja",
   "author": {
     "name": "TheDestruc7i0n",
-    "email": "destruc7i0n@thedestruc7i0n.ca"
+    "email": "isyuricunha@theisyuricunha.ca"
   },
   "license": "MIT",
   "private": true,
