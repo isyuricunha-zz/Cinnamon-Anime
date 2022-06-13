@@ -12,7 +12,9 @@ const Footer = ({ wrapped = true }) => (
         <a href="https://twitter.com/isyuricunha">isyuricunha</a>.
       </p>
       <small>
-        <a href="https://github.com/isyuricunha/nani">Source Code on GitHub</a>
+        <a href="https://github.com/isyuricunha/Cinnamon-Anime">
+          Source Code on GitHub
+        </a>
       </small>
     </Card>
   </div>
