@@ -1,1 +1,1 @@
-# nani-ui
+# cinnamon-ui

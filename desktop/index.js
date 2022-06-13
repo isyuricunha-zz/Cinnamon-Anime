@@ -21,7 +21,7 @@ rpc.login(RPCClientID).catch(console.error);
 function createWindow() {
   win = new BrowserWindow({
     icon: path.join(__dirname, "build", "icon.ico"),
-    title: "nani",
+    title: "cinnamon",
     show: false,
     backgroundColor: "#eee",
     webPreferences: {
