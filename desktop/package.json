@@ -1,9 +1,9 @@
 {
-  "name": "cinnamon-ui",
+  "name": "nani-ui",
   "version": "1.0.0",
-  "description": "cinnamon ui",
+  "description": "nani ui",
   "main": "index.js",
-  "repository": "https://github.com/isyuricunha/cinnamon-ui.git",
+  "repository": "https://github.com/isyuricunha/nani-ui.git",
   "homepage": "https://cinnamon-anime.garotogordo.codes",
   "author": {
     "name": "TheDestruc7i0n",
@@ -25,8 +25,8 @@
     "electron-builder": "^19.56.0"
   },
   "build": {
-    "productName": "cinnamon",
-    "appId": "cinnamon",
+    "productName": "nani",
+    "appId": "nani",
     "publish": {
       "provider": "github"
     },

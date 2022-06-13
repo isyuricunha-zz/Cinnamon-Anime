@@ -11,14 +11,14 @@ class AboutAlert extends Component {
       <Alert color="info" isOpen={visible} toggle={() => dispatch(hideAbout())}>
         <h5 className="alert-heading">What is Cinnamon</h5>
         <p className="mb-0">
-          cinnamon is an unofficial client for Crunchyroll. It provides an
-          interface for Crunchyroll that is fast and easy to use, all while
-          providing handy features, such as AniList updating.
+          nani is an unofficial client for Crunchyroll. It provides an interface
+          for Crunchyroll that is fast and easy to use, all while providing
+          handy features, such as AniList updating.
           <br />
           <br />
           It is 100%{" "}
           <a
-            href="https://github.com/isyuricunha/cinnamon"
+            href="https://github.com/isyuricunha/nani"
             target="_blank"
             rel="noopener noreferrer"
           >
