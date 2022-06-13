@@ -9,7 +9,7 @@ const Footer = ({ wrapped = true }) => (
     <Card body className="mb-4 mt-4 bg-light footer">
       <p className="m-0">
         cinnamon • Website by{" "}
-        <a href="https://twitter.com/TheDestruc7i0n">TheDestruc7i0n</a>.
+        <a href="https://twitter.com/isyuricunha">isyuricunha</a>.
       </p>
       <small>
         <a href="https://github.com/isyuricunha/nani">Source Code on GitHub</a>
