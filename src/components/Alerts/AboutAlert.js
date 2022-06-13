@@ -18,7 +18,7 @@ class AboutAlert extends Component {
           <br />
           It is 100%{" "}
           <a
-            href="https://github.com/isyuricunha/nani"
+            href="https://github.com/isyuricunha/Cinnamon-Anime"
             target="_blank"
             rel="noopener noreferrer"
           >
